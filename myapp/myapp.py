@@ -16,12 +16,14 @@ from bokeh.models import CategoricalColorMapper
 from bokeh.palettes import Spectral6
 from bokeh.layouts import widgetbox, row, gridplot
 from bokeh.models import Slider, Select
+from os.path import dirname, join, realpath
 
 
 # In[2]:
 
+ROOT = dirname(realpath(__file__))
 
-data = pd.read_csv("../data/gapminder_tidy.csv")
+data = pd.read_csv(join(ROOT, "/data/gapminder_tidy.csv"))
 data.set_index('Year', inplace=True)
 
 
